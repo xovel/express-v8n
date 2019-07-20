@@ -1,0 +1,34 @@
+{
+  "name": "express-v8n",
+  "version": "0.0.1",
+  "description": "Express validation middleware using joi.",
+  "main": "./lib/index.js",
+  "scripts": {
+    "test": "mocha test/demo"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xovel/express-v8n.git"
+  },
+  "keywords": [],
+  "author": "xovel<xovel@vip.qq.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xovel/express-v8n/issues"
+  },
+  "homepage": "https://github.com/xovel/express-v8n#readme",
+  "peerDependencies": {
+    "@hapi/joi": "*"
+  },
+  "devDependencies": {
+    "@hapi/joi": "^15.1.0",
+    "body-parser": "^1.19.0",
+    "eslint": "^6.0.1",
+    "eslint-config-zob": "0.0.4",
+    "eslint-plugin-zob": "0.0.2",
+    "esm": "^3.2.25",
+    "express": "^4.17.1",
+    "mocha": "^6.2.0",
+    "supertest": "^4.0.2"
+  }
+}
