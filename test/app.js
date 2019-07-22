@@ -13,34 +13,50 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
 const v = {
-  test: {
+  user: {
     query: Joi.object().keys({
-      test: Joi.string().required().max(20),
-      name: Joi.string().required().max(20),
+      name: Joi.string().required().max(20)
     })
   },
-  demo: {
+  create: {
     body: Joi.object().keys({
-      demo: Joi.string().required().max(20),
-      text: Joi.string().required().max(20),
+      id: Joi.string().required().max(20),
+      name: Joi.string().required().max(20)
+    })
+  },
+  spec: {
+    headers: Joi.object().keys({
+      token: Joi.string().required()
+    })
+  },
+  info: {
+    params: Joi.object().keys({
+      id: Joi.string().regex(/^\d+$/).required()
     })
   }
 }
 
-app.get('/test', v8n(v.test), function (req, res) {
-  res.json(200)
+app.get('/', function (req, res) {
+  res.send('Hello world')
 })
-app.post('/demo', v8n(v.demo), function (req, res) {
+
+const r200 = function (req, res) {
   res.json(200)
-})
+}
+
+app.get('/user', v8n(v.user), r200)
+app.post('/create', v8n(v.create), r200)
+app.get('/spec', v8n(v.spec), r200)
+app.get('/info/:id', v8n(v.info), r200)
 
 app.use(function (err, req, res, next) {
-  res.status(400).json(err);
+  if (err.name === 'v8nError') {
+    res.status(400).json(err.errors[0].message)
+  } else {
+    res.status(400).json(err)
+  }
 })
 
-const server = app.listen(4000, function () {
-  const port = server.address().port
-  process.stdout.write('Project listening at http://localhost:' + port + '\n')
-})
+app.listen(4000)
 
 module.exports = app

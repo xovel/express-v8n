@@ -3,20 +3,17 @@
 const app = require('./app')
 const request = require('supertest')
 
-describe('demo', function () {
+describe('query', function () {
   it('should return status 200', function (done) {
     request(app)
-      .get('/test?name=a&test=b')
+      .get('/user?name=a&test=777')
       .expect(200, done)
   })
 
   it('should return status 400', function (done) {
     request(app)
-      .get('/test?name=a')
+      .get('/user?nam=a')
       .expect(400, done)
   })
 
-  after(function () {
-    process.exit(0)
-  })
 })
