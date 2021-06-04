@@ -1,6 +1,6 @@
 {
   "name": "express-v8n",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Express validation middleware using joi.",
   "main": "./lib/index.js",
   "scripts": {
@@ -10,24 +10,29 @@
     "type": "git",
     "url": "git+https://github.com/z9i/express-v8n.git"
   },
-  "keywords": [],
-  "author": "xovel<xovel@vip.qq.com>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/z9i/express-v8n/issues"
-  },
   "homepage": "https://github.com/z9i/express-v8n#readme",
-  "peerDependencies": {
-    "@hapi/joi": "*"
-  },
   "devDependencies": {
-    "@hapi/joi": "^15.1.0",
     "body-parser": "^1.19.0",
     "eslint": "^6.0.1",
     "eslint-config-zob": "0.0.4",
     "eslint-plugin-zob": "0.0.2",
     "express": "^4.17.1",
+    "joi": "^17.4.0",
     "mocha": "^6.2.0",
     "supertest": "^4.0.2"
+  },
+  "peerDependencies": {
+    "joi": "*"
+  },
+  "keywords": [
+    "express",
+    "joi",
+    "express-v8n",
+    "validation"
+  ],
+  "author": "xovel<xovel@vip.qq.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/z9i/express-v8n/issues"
   }
 }

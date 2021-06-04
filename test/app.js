@@ -3,7 +3,7 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 
-const Joi = require('@hapi/joi')
+const Joi = require('joi')
 
 const v8n = require('../lib')
 

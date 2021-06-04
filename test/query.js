@@ -6,7 +6,7 @@ const request = require('supertest')
 describe('query', function () {
   it('should return status 200', function (done) {
     request(app)
-      .get('/user?name=a&test=777')
+      .get('/user?name=a')
       .expect(200, done)
   })
 
@@ -15,5 +15,4 @@ describe('query', function () {
       .get('/user?nam=a')
       .expect(400, done)
   })
-
 })
