@@ -57,6 +57,10 @@ app.use(function (err, req, res, next) {
   }
 })
 
-app.listen(4000)
+const server = app.listen(4000)
+
+after(function () {
+  server.close()
+})
 
 module.exports = app
