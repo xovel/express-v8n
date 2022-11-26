@@ -1,6 +1,6 @@
 {
   "name": "express-v8n",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "Express validation middleware using joi.",
   "main": "./lib/index.js",
   "scripts": {
@@ -22,7 +22,7 @@
     "supertest": "^4.0.2"
   },
   "peerDependencies": {
-    "joi": "*"
+    "joi": ">=16"
   },
   "keywords": [
     "express",

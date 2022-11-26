@@ -59,7 +59,7 @@ app.use(function (err, req, res, next) {
 
 const server = app.listen(4000)
 
-after(function () {
+typeof after === 'function' && after(function () {
   server.close()
 })
 
